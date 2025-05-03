@@ -4,8 +4,7 @@
   "description": "Maria's portfolio website",
   "private": "true",
   "scripts": {
-    "dev": "vite",
-    "dev-host": "vite --host",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview",
     "test:unit": "vitest"

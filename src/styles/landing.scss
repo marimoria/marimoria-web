@@ -1,0 +1,81 @@
+.background {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255,255,255,0.7);
+    background-image: url("./assets/images/dotted_paper_bg.svg");
+    background-size: cover;
+    background-blend-mode: lighten;
+    overflow-x: hidden;
+}
+
+.trinket_top {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    top: 0;
+    right: 0;
+}
+
+.trinket_bottom {
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    bottom: 0;
+    left: 0;
+}
+
+.capy_puppy, .turtle_cookie, .straw_cookies, .capy_croco {
+    width: 35%;
+    height: auto;
+}
+
+.main_content {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.id_card {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    rotate: 10deg;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
+    z-index: 1;
+}
+
+.passport {
+    position: absolute;
+    top: 45%;
+    right: 25%;
+    rotate: -8deg;
+    border-radius: 15px;
+    box-shadow: -4px -4px 4px 0px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.logo {
+    position: absolute;
+    top: 18%;
+    left: 15%;
+    width: 20%;
+    height: auto;
+    z-index: 3;
+}
+
+.stamp {
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    width: 30%;
+    height: auto;
+    z-index: 4;
+}
+  
