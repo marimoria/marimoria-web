@@ -1,6 +1,5 @@
 <template>
-    <h1>Hiii ilysm muah</h1>
-    <a href="/home">Go to ur house!!</a>
+    <h1>Im a different page!</h1>
 </template>
 
 <script setup>
