@@ -44,8 +44,8 @@
 
 .id_card {
     position: absolute;
-    top: 25%;
-    left: 25%;
+    top: 28vh;
+    left: 25vw;
     rotate: 10deg;
     filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
     z-index: 1;
@@ -53,8 +53,8 @@
 
 .passport {
     position: absolute;
-    top: 45%;
-    right: 25%;
+    top: 45vh;
+    right: 25vw;
     rotate: -8deg;
     border-radius: 15px;
     box-shadow: -4px -4px 4px 0px rgba(0, 0, 0, 0.3);
@@ -72,10 +72,42 @@
 
 .stamp {
     position: absolute;
-    top: 60%;
-    left: 60%;
+    top: 55vh;
+    left: 60vw;
     width: 30%;
     height: auto;
     z-index: 4;
 }
-  
+
+@media (min-width: 400px)  {
+    .stamp {
+        width: 30%;
+    }
+
+    .id_card, .passport {
+        width: 55%;
+    }
+
+    .logo {
+        width: 23%;
+    }
+}
+
+@media (min-width: 600px)  {
+    .stamp {
+        width: 25%;
+    }
+
+    .id_card, .passport {
+        width: 40%;
+    }
+
+    .logo {
+        width: 18%;
+    }
+
+    .capy_puppy, .turtle_cookie, .straw_cookies, .capy_croco {
+        width: 27vw;
+        height: auto;
+    }
+}
