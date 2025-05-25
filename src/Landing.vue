@@ -23,7 +23,6 @@
     @use "./styles/landing.scss"; // local component specific style
 </style>
 
-
 <script setup>
     const props = defineProps({
         viewport: Object,
