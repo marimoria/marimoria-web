@@ -61,6 +61,10 @@
     z-index: 2;
 }
 
+.passport:hover {
+    cursor: pointer;
+}
+
 .logo {
     position: absolute;
     top: 18%;
@@ -108,6 +112,71 @@
 
     .capy_puppy, .turtle_cookie, .straw_cookies, .capy_croco {
         width: 27vw;
-        height: auto;
+    }
+}
+
+// surface duo
+@media (max-width: 600px) and (min-aspect-ratio: 9/18) {
+    .id_card {
+        width: 47%;
+        top: 28vh;
+        left: 23vw;
+    }
+
+    .passport {
+        width: 47%;
+        top: 50vh;
+    }
+}
+
+// nest hub & other wider screens
+@media (min-width: 1000px) and (min-aspect-ratio: 16/10) {
+    .id_card {
+        width: 30%;
+        top: 25vh;
+        left: 30vw;
+    }
+
+    .passport {
+        width: 30%;
+        top: 50vh;
+    }
+
+    .stamp {
+        width: 15%;
+        left: 65vw;
+        top: 65vh;
+    }
+
+    .logo {
+        width: 13%;
+        left: 25vw;
+        top: 10vh;
+    }
+
+    .capy_puppy, .turtle_cookie, .straw_cookies, .capy_croco {
+        width: 50%;
+    }
+}
+
+@media (min-width:1025px) {
+    .logo {
+        width: 10%;
+        top: 5vh;
+    }
+
+    .id_card {
+        top: 20vh;
+        width: 25%;
+    }
+
+    .passport {
+        top: 48vh;
+        width: 25%;
+        left: 45vw;
+    }
+
+    .stamp {
+        width: 13%;
     }
 }
