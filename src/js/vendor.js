@@ -1,10 +1,8 @@
 import { gsap } from 'gsap';
-import { RoughEase } from 'gsap/EasePack';
 import { MotionPathPlugin } from 'gsap/MotionPathPlugin';
-import { CustomEase } from 'gsap/CustomEase';
+import { Draggable } from 'gsap/Draggable';
+import InertiaPlugin from 'gsap/InertiaPlugin';
 
-export * from 'gsap';
+gsap.registerPlugin(MotionPathPlugin, Draggable, InertiaPlugin);
 
-gsap.registerPlugin(MotionPathPlugin);
-gsap.registerPlugin(RoughEase);
-gsap.registerPlugin(CustomEase);
+export { gsap, Draggable, MotionPathPlugin, InertiaPlugin };

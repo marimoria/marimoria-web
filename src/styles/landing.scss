@@ -7,29 +7,7 @@
     background-size: cover;
     background-blend-mode: lighten;
     overflow-x: hidden;
-}
-
-.trinket_top {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: end;
-    top: 0;
-    right: 0;
-}
-
-.trinket_bottom {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    bottom: 0;
-    left: 0;
-}
-
-.capy_puppy, .turtle_cookie, .straw_cookies, .capy_croco {
-    width: 35%;
-    height: auto;
+    overflow-y: hidden;
 }
 
 .main_content {
@@ -42,141 +20,212 @@
     align-items: center;
 }
 
-.id_card {
+.trinket_top {
     position: absolute;
-    top: 28vh;
-    left: 25vw;
-    rotate: 10deg;
-    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
-    z-index: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    top: 0;
+    right: 0;
+    z-index: 10;
 }
 
-.passport {
+.trinket_bottom {
     position: absolute;
-    top: 45vh;
-    right: 25vw;
-    rotate: -8deg;
-    border-radius: 15px;
-    box-shadow: -4px -4px 4px 0px rgba(0, 0, 0, 0.3);
-    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
 }
 
-.passport:hover {
-    cursor: pointer;
-}
+.parallax {
+    $self: &;
 
-.logo {
-    position: absolute;
-    top: 18%;
-    left: 15%;
-    width: 20%;
-    height: auto;
-    z-index: 3;
-}
+    &--capy_puppy, &--turtle_cookie, &--straw_cookies, &--capy_croco {
+        width: 35%;
+        height: auto;
+    }
 
-.stamp {
-    position: absolute;
-    top: 55vh;
-    left: 60vw;
-    width: 30%;
-    height: auto;
-    z-index: 4;
+    &--id_card {
+        position: absolute;
+        top: 28vh;
+        left: 25vw;
+        transform: rotate(10deg);
+        filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
+        z-index: 1;
+    }
+
+    &--passport {
+        position: absolute;
+        top: 45vh;
+        right: 25vw;
+        transform: rotate(-8deg);
+        border-radius: 15px;
+        filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
+        z-index: 2;
+    }
+
+    &--passport:hover {
+        cursor: pointer;
+    }
+
+    &--logo {
+        position: absolute;
+        top: 18%;
+        left: 15%;
+        width: 20%;
+        height: auto;
+        z-index: 3;
+    }
+
+    &--stamp {
+        position: absolute;
+        top: 55vh;
+        left: 60vw;
+        width: 30%;
+        height: auto;
+        z-index: 4;
+    }
 }
 
 @media (min-width: 400px)  {
-    .stamp {
-        width: 30%;
-    }
+    .parallax {
+        $self: &;
 
-    .id_card, .passport {
-        width: 55%;
-    }
+        &--stamp {
+            width: 30%;
+        }
 
-    .logo {
-        width: 23%;
+        &--id_card, &--passport {
+            width: 55%;
+        }
+
+        &--logo {
+            width: 23%;
+        }
     }
 }
 
 @media (min-width: 600px)  {
-    .stamp {
-        width: 25%;
-    }
+    .parallax {
+        $self: &;
 
-    .id_card, .passport {
-        width: 40%;
-    }
+        &--stamp {
+            width: 25%;
+        }
 
-    .logo {
-        width: 18%;
-    }
+        &--id_card, &--passport {
+            width: 40%;
+        }
 
-    .capy_puppy, .turtle_cookie, .straw_cookies, .capy_croco {
-        width: 27vw;
-    }
+        &--logo {
+            width: 18%;
+        }
+
+        &--capy_puppy, &--turtle_cookie, &--straw_cookies, &--capy_croco {
+            width: 23vw;
+        }
+    }    
+}
+
+@media (min-width: 700px)  {
+    .parallax {
+        $self: &;
+
+        &--stamp {
+            width: 20%;
+        }
+
+        &--id_card, &--passport {
+            width: 35%;
+        }
+
+        &--logo {
+            width: 15%;
+        }
+
+        &--capy_puppy, &--turtle_cookie, &--straw_cookies, &--capy_croco {
+            width: 20vw;
+        }
+    }    
 }
 
 // surface duo
 @media (max-width: 600px) and (min-aspect-ratio: 9/18) {
-    .id_card {
-        width: 47%;
-        top: 28vh;
-        left: 23vw;
-    }
+    .parallax {
+        $self: &;
 
-    .passport {
-        width: 47%;
-        top: 50vh;
+        &--id_card {
+            width: 47%;
+            top: 28vh;
+            left: 23vw;
+        }
+
+        &--passport {
+            width: 47%;
+            top: 50vh;
+        }
     }
 }
 
 // nest hub & other wider screens
 @media (min-width: 1000px) and (min-aspect-ratio: 16/10) {
-    .id_card {
-        width: 30%;
-        top: 25vh;
-        left: 30vw;
-    }
+    .parallax {
+        $self: &;
 
-    .passport {
-        width: 30%;
-        top: 50vh;
-    }
+        &--id_card {
+            width: 30%;
+            top: 25vh;
+            left: 30vw;
+        }
 
-    .stamp {
-        width: 15%;
-        left: 65vw;
-        top: 65vh;
-    }
+        &--passport {
+            width: 30%;
+            top: 50vh;
+        }
 
-    .logo {
-        width: 13%;
-        left: 25vw;
-        top: 10vh;
-    }
+        &--stamp {
+            width: 15%;
+            left: 65vw;
+            top: 65vh;
+        }
 
-    .capy_puppy, .turtle_cookie, .straw_cookies, .capy_croco {
-        width: 50%;
+        &--logo {
+            width: 13%;
+            left: 25vw;
+            top: 10vh;
+        }
+
+        &--capy_puppy, &--turtle_cookie, &--straw_cookies, &--capy_croco {
+            width: 50%;
+        }
     }
 }
 
 @media (min-width:1025px) {
-    .logo {
-        width: 10%;
-        top: 5vh;
-    }
+    .parallax {
+        $self: &;
 
-    .id_card {
-        top: 20vh;
-        width: 25%;
-    }
+        &--logo {
+            width: 10%;
+            top: 5vh;
+        }
 
-    .passport {
-        top: 48vh;
-        width: 25%;
-        left: 45vw;
-    }
+        &--id_card {
+            top: 20vh;
+            width: 25%;
+        }
 
-    .stamp {
-        width: 13%;
+        &--passport {
+            top: 48vh;
+            width: 25%;
+            left: 45vw;
+        }
+
+        &--stamp {
+            width: 13%;
+        }
     }
 }
