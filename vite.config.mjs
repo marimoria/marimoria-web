@@ -4,8 +4,8 @@ import vue from '@vitejs/plugin-vue';
 
 const isProd = process.env.NODE_ENV == 'production';
 
-export default defineConfig({
-    base: './',
+export default defineConfig(({ mode }) => ({
+    base: mode === 'github' ? '/marimoria-web/' : './',
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
@@ -23,4 +23,4 @@ export default defineConfig({
         port: 3000
     },
     plugins: [vue()]
-});
+}));

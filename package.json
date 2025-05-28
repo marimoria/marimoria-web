@@ -4,11 +4,11 @@
   "description": "Maria's portfolio website",
   "private": "true",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "vite build",
+    "build:gh": "vite build --mode github",
     "preview": "vite preview",
-    "test:unit": "vitest",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build:gh && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
