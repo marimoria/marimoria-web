@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue';
 const isProd = process.env.NODE_ENV == 'production';
 
 export default defineConfig({
-    base: '/marimoria-web/',
+    base: './',
     resolve: {
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
