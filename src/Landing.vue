@@ -1,20 +1,20 @@
 <template>
     <main class="background">
         <div class="trinket_top">
-            <img data-speedx="0.02" data-speedy="0.03" class="size-hover parallax parallax--capy_puppy" src="./assets/images/capy and puppy.svg" alt="">
-            <img data-speedx="0.01" data-speedy="0.03" class="float-hover parallax parallax--turtle_cookie" src="./assets/images/turtle cookie.svg" alt="">
+            <img data-speedx="0.02" data-speedy="0.03" class="noselect size-hover parallax parallax--capy_puppy" src="./assets/images/capy and puppy.svg" alt="">
+            <img data-speedx="0.01" data-speedy="0.03" class="noselect float-hover parallax parallax--turtle_cookie" src="./assets/images/turtle cookie.svg" alt="">
         </div>
 
         <div class="main_content">
-            <img data-speedx="0.009" data-speedy="0.03" class="float-hover parallax parallax--id_card" src="./assets/images/ID card.svg" alt="">
-            <img data-speedx="0.01" data-speedy="0.03" class="rotate-hover parallax parallax--passport" src="./assets/images/pasport card.svg" alt="">
-            <img data-speedx="0.02" data-speedy="0.03" class="size-hover parallax parallax--logo" src="./assets/images/logo.svg" alt="">
-            <img data-speedx="0.03" data-speedy="0.03" class="size-hover parallax parallax--stamp" src="./assets/images/tom stamp.svg" alt="">
+            <img data-speedx="0.009" data-speedy="0.03" class="noselect float-hover parallax parallax--id_card" src="./assets/images/ID card.svg" alt="">
+            <img data-speedx="0.01" data-speedy="0.03" class="noselect rotate-hover parallax parallax--passport" src="./assets/images/pasport card.svg" alt="">
+            <img data-speedx="0.02" data-speedy="0.03" class="noselect size-hover parallax parallax--logo" src="./assets/images/logo.svg" alt="">
+            <img data-speedx="0.03" data-speedy="0.03" class="noselect size-hover parallax parallax--stamp" src="./assets/images/tom stamp.svg" alt="">
         </div>
 
         <div class="trinket_bottom">
-            <img data-speedx="0.025" data-speedy="0.03" class="float-hover parallax parallax--straw_cookies" src="./assets/images/straw cookies.svg" alt="">
-            <img data-speedx="0.02" data-speedy="0.03" class="size-hover parallax parallax--capy_croco" src="./assets/images/capy and croco.svg" alt="">
+            <img data-speedx="0.025" data-speedy="0.03" class="noselect float-hover parallax parallax--straw_cookies" src="./assets/images/straw cookies.svg" alt="">
+            <img data-speedx="0.02" data-speedy="0.03" class="noselect size-hover parallax parallax--capy_croco" src="./assets/images/capy and croco.svg" alt="">
         </div>
     </main>
 </template>
