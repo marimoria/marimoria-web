@@ -1,6 +1,6 @@
 import { createRouter, createWebHashHistory } from 'vue-router';
 import Landing from '../Landing.vue';
-import Home from '../Home.vue'
+import Portfolio from '../Portfolio.vue'
 
 // use component: () => import('path') for lazy-loading.
 const routes = [
@@ -10,8 +10,8 @@ const routes = [
         component: Landing
     },
     {
-        path: "/home",
-        component: Home
+        path: "/portfolio",
+        component: Portfolio
     },
     {
         path: "/:pathMatch(.*)*",

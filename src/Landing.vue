@@ -8,7 +8,11 @@
         <div class="main_content">
             <div class="content_wrapper">
                 <img data-speedx="0.009" data-speedy="0.03" class="noselect float-hover parallax parallax--id_card" src="./assets/images/ID card.svg" alt="">
-                <img data-speedx="0.01" data-speedy="0.03" class="noselect rotate-hover parallax parallax--passport" src="./assets/images/pasport card.svg" alt="">
+                
+                <router-link to="/portfolio">
+                    <img data-speedx="0.01" data-speedy="0.03" class="noselect rotate-hover parallax parallax--passport" src="./assets/images/pasport card.svg" alt="">
+                </router-link>
+                
                 <img data-speedx="0.02" data-speedy="0.03" class="noselect size-hover parallax parallax--logo" src="./assets/images/logo.svg" alt="">
                 <img data-speedx="0.03" data-speedy="0.03" class="noselect size-hover parallax parallax--stamp" src="./assets/images/tom stamp.svg" alt="">
                 <img data-speedx="0.04" data-speedy="0.03" class="noselect float-hover parallax parallax--flower" src="./assets/images/flower.svg" alt="">
