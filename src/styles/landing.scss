@@ -1,7 +1,7 @@
 .background {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: calc(var(--vh, 1vh) * 100);
     background-color: rgba(255,255,255,0.7);
     background-image: url("./assets/images/dotted_paper_bg.svg");
     background-size: cover;
@@ -46,6 +46,22 @@
     &--capy_puppy, &--turtle_cookie, &--straw_cookies, &--capy_croco {
         width: 35%;
         height: auto;
+    }
+
+    &--flower {
+        position: absolute;
+        right: 5vw;
+        top: 34vh;
+        width: 23%;
+        z-index: 5;
+    }
+
+    &--toaster {
+        position: absolute;
+        left: 8vw;
+        top: 40vh;
+        width: 23%;
+        z-index: 5;
     }
 
     &--id_card {
@@ -105,6 +121,14 @@
         &--logo {
             width: 23%;
         }
+
+        &--toaster {
+            left: 5vw;
+        }
+
+        &--flower {
+            right: 3vw;
+        }
     }
 }
 
@@ -149,6 +173,18 @@
         &--capy_puppy, &--turtle_cookie, &--straw_cookies, &--capy_croco {
             width: 20vw;
         }
+
+        &--flower {
+            right: 20vw;
+            top: 26vh;
+            width: 17%;
+        }
+
+        &--toaster {
+            left: 20vw;
+            top: 45vh;
+            width: 17%;
+        }
     }    
 }
 
@@ -167,50 +203,45 @@
             width: 47%;
             top: 50vh;
         }
-    }
-}
-
-// nest hub & other wider screens
-@media (min-width: 1000px) and (min-aspect-ratio: 16/10) {
-    .parallax {
-        $self: &;
-
-        &--id_card {
-            width: 30%;
-            top: 25vh;
-            left: 30vw;
-        }
-
-        &--passport {
-            width: 30%;
-            top: 50vh;
-        }
 
         &--stamp {
-            width: 15%;
-            left: 65vw;
+            width: 23%;
+            left: 60vw;
             top: 65vh;
         }
 
         &--logo {
-            width: 13%;
-            left: 25vw;
-            top: 10vh;
+            width: 20%;
+            left: 15vw;
+            top: 14vh;
         }
 
-        &--capy_puppy, &--turtle_cookie, &--straw_cookies, &--capy_croco {
-            width: 50%;
+        &--flower {
+            right: 8vw;
+            top: 35vh;
+            width: 20%;
+        }
+
+        &--toaster {
+            left: 8vw;
+            top: 43vh;
+            width: 20%;
         }
     }
 }
 
-@media (min-width:1025px) {
+@media (min-width: 1025px) {
+    .trinket_top, .trinket_bottom {
+        height: 22%;
+    }
+
     .parallax {
         $self: &;
 
         &--logo {
             width: 10%;
             top: 5vh;
+            left: 20vw;
         }
 
         &--id_card {
@@ -225,7 +256,25 @@
         }
 
         &--stamp {
-            width: 13%;
+            width: 12%;
+            top: 68vh;
+            left: 65vw;
+        }
+
+        &--capy_puppy, &--turtle_cookie, &--straw_cookies, &--capy_croco {
+            width: 100%;
+        }
+
+        &--flower {
+            right: 35vw;
+            top: 23vh;
+            width: 10%;
+        }
+
+        &--toaster {
+            left: 30vw;
+            top: 55vh;
+            width: 10%;
         }
     }
 }
