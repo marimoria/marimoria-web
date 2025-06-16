@@ -1,0 +1,103 @@
+.background {
+    position: relative;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: rgba(255,255,255,0.5);
+    background-image: url("./assets/images/dotted_paper_bg.svg");
+    background-size: contain;
+    background-blend-mode: lighten;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.main_grid {
+    $self: &;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    &--header_area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &--icons_area {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &--bottom_bar_area {
+        height: 10vh;
+    }
+}
+
+.app_group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_name {
+    font-family: "Satoshi";
+    font-size: 13px;
+    font-weight: bold;
+    color: #ab8568;
+    text-align: center;
+    margin: 3px;
+}
+
+.time {
+    font-family: "Satoshi";
+    font-size: 55px;
+    font-weight: 900;
+    color: #a3b87f;
+    margin-bottom: -10px;
+}
+
+.date {
+    font-family: "Satoshi";
+    font-size: 18px;
+    font-weight: bold;
+    color: #a3b87f;
+}
+
+.digicam_widget {
+    width: 65%;
+    align-self: center;
+}
+
+.icon_group_A {
+    $self: &;
+
+    display: grid;
+    grid-template-columns: 45% 55%;
+    justify-content: center;
+    
+    &--dvd_widget {
+        width: 90%;
+    }
+
+    &--icon_grid {
+        $self: &;
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        align-items: center;
+        justify-items: center;
+
+        &--toaster, &--clover_sticker, &--straw_cookies {
+            width: 70%;
+        }
+
+        &--coffee {
+            width: 80%;
+        }
+    }
+}
