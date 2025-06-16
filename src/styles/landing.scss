@@ -52,15 +52,15 @@
         position: absolute;
         right: 5vw;
         top: 34vh;
-        width: 23%;
+        width: 19%;
         z-index: 5;
     }
 
     &--toaster {
         position: absolute;
-        left: 8vw;
+        left: 5vw;
         top: 40vh;
-        width: 23%;
+        width: 19%;
         z-index: 5;
     }
 
@@ -75,7 +75,7 @@
 
     &--passport {
         position: absolute;
-        top: 45vh;
+        top: 47vh;
         right: 25vw;
         transform: rotate(-8deg);
         border-radius: 15px;
@@ -98,9 +98,9 @@
 
     &--stamp {
         position: absolute;
-        top: 55vh;
+        top: 60vh;
         left: 60vw;
-        width: 30%;
+        width: 27%;
         height: auto;
         z-index: 4;
     }
@@ -127,7 +127,8 @@
         }
 
         &--flower {
-            right: 3vw;
+            top: 40vh;
+            right: 2vw;
         }
     }
 }
@@ -177,57 +178,15 @@
         &--flower {
             right: 20vw;
             top: 26vh;
-            width: 17%;
+            width: 15%;
         }
 
         &--toaster {
             left: 20vw;
             top: 45vh;
-            width: 17%;
+            width: 15%;
         }
     }    
-}
-
-// surface duo
-@media (max-width: 600px) and (min-aspect-ratio: 9/18) {
-    .parallax {
-        $self: &;
-
-        &--id_card {
-            width: 47%;
-            top: 28vh;
-            left: 23vw;
-        }
-
-        &--passport {
-            width: 47%;
-            top: 50vh;
-        }
-
-        &--stamp {
-            width: 23%;
-            left: 60vw;
-            top: 65vh;
-        }
-
-        &--logo {
-            width: 20%;
-            left: 15vw;
-            top: 14vh;
-        }
-
-        &--flower {
-            right: 8vw;
-            top: 35vh;
-            width: 20%;
-        }
-
-        &--toaster {
-            left: 8vw;
-            top: 43vh;
-            width: 20%;
-        }
-    }
 }
 
 @media (min-width: 1025px) {
