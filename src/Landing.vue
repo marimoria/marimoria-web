@@ -6,10 +6,14 @@
         </div>
 
         <div class="main_content">
-            <img data-speedx="0.009" data-speedy="0.03" class="noselect float-hover parallax parallax--id_card" src="./assets/images/ID card.svg" alt="">
-            <img data-speedx="0.01" data-speedy="0.03" class="noselect rotate-hover parallax parallax--passport" src="./assets/images/pasport card.svg" alt="">
-            <img data-speedx="0.02" data-speedy="0.03" class="noselect size-hover parallax parallax--logo" src="./assets/images/logo.svg" alt="">
-            <img data-speedx="0.03" data-speedy="0.03" class="noselect size-hover parallax parallax--stamp" src="./assets/images/tom stamp.svg" alt="">
+            <div class="content_wrapper">
+                <img data-speedx="0.009" data-speedy="0.03" class="noselect float-hover parallax parallax--id_card" src="./assets/images/ID card.svg" alt="">
+                <img data-speedx="0.01" data-speedy="0.03" class="noselect rotate-hover parallax parallax--passport" src="./assets/images/pasport card.svg" alt="">
+                <img data-speedx="0.02" data-speedy="0.03" class="noselect size-hover parallax parallax--logo" src="./assets/images/logo.svg" alt="">
+                <img data-speedx="0.03" data-speedy="0.03" class="noselect size-hover parallax parallax--stamp" src="./assets/images/tom stamp.svg" alt="">
+                <img data-speedx="0.04" data-speedy="0.03" class="noselect float-hover parallax parallax--flower" src="./assets/images/flower.svg" alt="">
+                <img data-speedx="0.05" data-speedy="0.03" class="noselect size-hover parallax parallax--toaster" src="./assets/images/toaster.svg" alt="">
+            </div>
         </div>
 
         <div class="trinket_bottom">
@@ -25,7 +29,7 @@
 
 <script setup>
     import { onMounted } from 'vue';
-    import { useParallax, floatHover, rotateHover, sizeHover, freeDrag } from './composables/animations';
+    import { useParallax, floatHover, rotateHover, sizeHover } from './composables/animations';
 
     const props = defineProps({
         viewport: Object,
