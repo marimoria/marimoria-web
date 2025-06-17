@@ -10,19 +10,7 @@ export function useViewport() {
 
     return {
       w,
-      h,
-      isMin480: w >= 480,
-      isMin580: w >= 580,
-      isMin768: w >= 768,
-      isMin850: w >= 850,
-      isMin1000: w >= 1000,
-      isMin1150: w >= 1150,
-      isMax480: w <= 480,
-      isMax580: w <= 580,
-      isMax768: w <= 768,
-      isMax850: w <= 850,
-      isMax1000: w <= 1000,
-      isMax1150: w <= 1150,
+      h
     };
   }
 

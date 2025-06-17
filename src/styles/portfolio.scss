@@ -17,6 +17,7 @@
     flex-direction: column;
     width: 100%;
     height: 100%;
+    padding: 10px;
 
     &--header_area {
         display: flex;
@@ -28,11 +29,30 @@
     &--icons_area {
         display: flex;
         flex-direction: column;
+        flex: 1;
         gap: 15px;
     }
 
-    &--bottom_bar_area {
+    &--bottom_area {
+        display: flex;
+        flex-direction: row;
         height: 10vh;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.sound_area {
+    $self: &;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &--sound_widget {
+        width: 50%;
     }
 }
 
@@ -67,11 +87,6 @@
     color: #a3b87f;
 }
 
-.digicam_widget {
-    width: 65%;
-    align-self: center;
-}
-
 .icon_group_A {
     $self: &;
 
@@ -80,7 +95,7 @@
     justify-content: center;
     
     &--dvd_widget {
-        width: 90%;
+        width: 85%;
     }
 
     &--icon_grid {
@@ -99,5 +114,54 @@
         &--coffee {
             width: 80%;
         }
+    }
+}
+
+.icon_group_B {
+    $self: &;
+
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-content: center;
+    
+    &--digicam_widget {
+        width: 100%;
+        align-self: center;
+    }
+
+    &--lillypad_widget {
+        width: 70%;
+    }
+}
+
+.calico_critters {
+    width: 40%;
+    align-self: center;
+}
+
+.bar_area {
+    $self: &;
+
+    background-color: rgb(234, 225, 207);
+    height: 80%;
+    width: 70%;
+    border-radius: 30px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    &--logo_link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+    }
+
+    &--logo, &--turtle_cookie, &--capy_and_puppy {
+        height: 100%;
+        width: auto;
     }
 }
