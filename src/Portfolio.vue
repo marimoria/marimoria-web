@@ -1,6 +1,11 @@
 <template>
-    <div class="background">
+    <main class="background">
         <div v-if="(viewport.w < 1024) || ((viewport.w == 1024) && (viewport.h) > 800)" class="main_grid">
+            <div id="academics_popup" v-if="academicsPopVisible" class="draggable academics_popup">
+                <img src="./assets/images/academics_popup.svg" alt="" class="draggable academics_popup--popup_image">
+                <img id="academics_popup_close" @click="academicsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable academics_popup--close_button">
+            </div>
+
             <div class="main_grid--header_area">
                 <p class="time">03:30</p>
                 <p class="date">7th April ⋆. 𐙚 ˚</p>
@@ -8,7 +13,7 @@
 
             <div class="main_grid--icons_area">
                 <div class="icon_group_A">
-                    <div data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
+                    <div @click="academicsPopVisible = true" data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
                         <img src="./assets/images/dvd.svg" alt="" class="float_hover icon_group_A--dvd_widget">
                         <p class="icon_name">Academics</p>
                     </div>
@@ -53,6 +58,11 @@
         </div>
 
         <div v-if="(viewport.w > 1024) || ((viewport.w == 1024) && (viewport.h) <= 800)" class="desktop_main_grid">
+            <div id="academics_popup" v-if="academicsPopVisible" class="draggable academics_popup">
+                <img src="./assets/images/academics_popup.svg" alt="" class="draggable academics_popup--popup_image">
+                <img id="academics_popup_close" @click="academicsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable academics_popup--close_button">
+            </div>
+
             <p class="time">03:30</p>
             <p class="date">7th April ⋆. 𐙚 ˚</p>
             
@@ -64,7 +74,7 @@
                 <img data-speedx="0.01" data-speedy="0.03" src="./assets/images/ID card.svg" alt="" class="float_hover parallax accessory_area--id_card">
             </div>
             <div class="desktop_main_grid--icons_area">
-                <div data-speedx="0.02" data-speedy="0.03" class="clickable float_hover parallax app_group app_group--academics">
+                <div @click="academicsPopVisible = true" data-speedx="0.02" data-speedy="0.03" class="clickable float_hover parallax app_group app_group--academics">
                     <img src="./assets/images/toaster.svg" alt="" class="app_group--icons">
                     <p class="icon_name">Academics</p>
                 </div>
@@ -90,7 +100,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped lang="scss">
@@ -98,13 +108,15 @@
 </style>
 
 <script setup>
-    import { onMounted } from 'vue';
-    import { useParallax, floatHover, rotateHover, sizeHover } from './composables/animations';
+    import { onMounted, ref, watch, nextTick } from 'vue';
+    import { useParallax, floatHover, rotateHover, sizeHover, freeDrag } from './composables/animations';
 
     const props = defineProps({
         viewport: Object,
         device: Object
     });
+
+    const academicsPopVisible = ref(false);
 
     onMounted(() => {
         const parallaxEl = document.querySelectorAll(".parallax");
@@ -118,5 +130,17 @@
 
         const sizeHoverEl = document.querySelectorAll(".size_hover");
         sizeHover(sizeHoverEl);
+
+        watch(academicsPopVisible, async (visible) => {
+            if (visible) {
+                await nextTick();
+
+                document.querySelector('#academics_popup_close').addEventListener('touchend', () => {
+                    academicsPopVisible.value = false;
+                });
+
+                freeDrag("#academics_popup", ".background");
+            }
+        });
     });
 </script>
