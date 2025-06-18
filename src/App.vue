@@ -5,9 +5,15 @@
 </template>
 
 <script setup>
-    import { Transition } from 'vue';
+    import { onMounted, Transition } from 'vue';
     import { useViewport } from './composables/useViewport';
     import './styles/app.scss'; // global style to all components & pages
 
     const { viewport, device } = useViewport();
+
+    onMounted(() => {
+        document.addEventListener('contextmenu', e => {
+            e.preventDefault();
+        });
+    });
 </script>

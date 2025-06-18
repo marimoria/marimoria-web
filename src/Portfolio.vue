@@ -1,59 +1,92 @@
 <template>
     <div class="background">
-        <div class="main_grid">
+        <div v-if="(viewport.w < 1024) || ((viewport.w == 1024) && (viewport.h) > 800)" class="main_grid">
             <div class="main_grid--header_area">
                 <p class="time">03:30</p>
                 <p class="date">7th April ⋆. 𐙚 ˚</p>
             </div>
 
             <div class="main_grid--icons_area">
-                <div class="sound_area">
-                    <img src="./assets/images/sound_widget.svg" alt="" class="sound_area--sound_widget">
-                </div>
-
                 <div class="icon_group_A">
-                    <div class="app_group">
-                        <img src="./assets/images/dvd.svg" alt="" class="icon_group_A--dvd_widget">
+                    <div data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
+                        <img src="./assets/images/dvd.svg" alt="" class="float_hover icon_group_A--dvd_widget">
                         <p class="icon_name">Academics</p>
                     </div>
                     <div class="icon_group_A--icon_grid">
-                        <div class="app_group">
-                            <img src="./assets/images/toaster.svg" alt="" class="icon_group_A--icon_grid--toaster">
+                        <div data-speedx="0.03" data-speedy="0.03" class="parallax app_group">
+                            <img src="./assets/images/toaster.svg" alt="" class="rotate_hover icon_group_A--icon_grid--toaster">
                             <p class="icon_name">Experience</p>
                         </div>
-                        <div class="app_group">
-                            <img src="./assets/images/coffee.svg" alt="" class="icon_group_A--icon_grid--coffee">
+                        <div class="app_group"></div>
+                        <div class="app_group"></div>
+                        <div data-speedx="0.01" data-speedy="0.03" class="parallax app_group">
+                            <img src="./assets/images/straw cookies.svg" alt="" class="size_hover icon_group_A--icon_grid--straw_cookies">
                             <p class="icon_name">Projects</p>
-                        </div>
-                        <div class="app_group">
-                            <img src="./assets/images/clover_sticker.svg" alt="" class="icon_group_A--icon_grid--clover_sticker">
-                            <p class="icon_name">Skills</p>
-                        </div>
-                        <div class="app_group">
-                            <img src="./assets/images/straw cookies.svg" alt="" class="icon_group_A--icon_grid--straw_cookies">
-                            <p class="icon_name">Contact</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="icon_group_B">
-                    <img src="./assets/images/digicam_widget.svg" alt="" class="icon_group_B--digicam_widget">
-                    <div class="app_group">
-                        <img src="./assets/images/lillypad.svg" alt="" class="icon_group_B--lillypad_widget">
+                    <img data-speedx="0.04" data-speedy="0.03" src="./assets/images/digicam_widget.svg" alt="" class="float_hover parallax icon_group_B--digicam_widget">
+                    <div data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
+                        <img src="./assets/images/coffee.svg" alt="" class="rotate_hover icon_group_B--coffee">
                         <p class="icon_name">Achievements</p>
                     </div>
                 </div>
 
-                <img v-if="viewport.h >= 800" src="./assets/images/calico_critters.svg" alt="" class="calico_critters">
+                <div class="icon_group_C">
+                    <div class="icon_group_C--icon_grid">
+                        <div class="app_group"></div>
+                        <div data-speedx="0.01" data-speedy="0.03" class="parallax app_group">
+                            <img src="./assets/images/clover_sticker.svg" alt="" class="size_hover icon_group_C--icon_grid--clover_sticker">
+                            <p class="icon_name">Skills</p>
+                        </div>
+                        <div data-speedx="0.03" data-speedy="0.03" class="parallax app_group">
+                            <img src="./assets/images/turtle cookie.svg" alt="" class="float_hover icon_group_C--icon_grid--turtle_cookie">
+                            <p class="icon_name">Contact</p>
+                        </div>
+                        <div class="app_group"></div>
+                    </div>
+                    <img data-speedx="0.04" data-speedy="0.03" src="./assets/images/ball_widget.svg" alt="" class="rotate_hover parallax icon_group_C--ball_widget">
+                </div>
             </div>
+        </div>
 
-            <div class="main_grid--bottom_area">
-                <div class="bar_area">
-                    <img src="./assets/images/turtle cookie.svg" alt="" class="bar_area--turtle_cookie">
-                    <router-link to="/" class="bar_area--logo_link">
-                        <img src="./assets/images/logo.svg" alt="" class="bar_area--logo">
-                    </router-link>
-                    <img src="./assets/images/capy and puppy.svg" alt="" class="bar_area--capy_and_puppy">
+        <div v-if="(viewport.w > 1024) || ((viewport.w == 1024) && (viewport.h) <= 800)" class="desktop_main_grid">
+            <p class="time">03:30</p>
+            <p class="date">7th April ⋆. 𐙚 ˚</p>
+            
+            <div class="desktop_main_grid--accessory_area">
+                <img data-speedx="0.02" data-speedy="0.03" src="./assets/images/digicam_widget.svg" alt="" class="rotate_hover parallax accessory_area--digicam_widget">
+                <img data-speedx="0.01" data-speedy="0.03" src="./assets/images/book_frontcover.svg" alt="" class="rotate_hover parallax accessory_area--book_widget">
+                <img data-speedx="0.03" data-speedy="0.03" src="./assets/images/dvd.svg" alt="" class="size_hover parallax accessory_area--dvd_widget">
+                <img data-speedx="0.04" data-speedy="0.03" src="./assets/images/ball_widget.svg" alt="" class="float_hover parallax accessory_area--ball_widget">
+                <img data-speedx="0.01" data-speedy="0.03" src="./assets/images/ID card.svg" alt="" class="float_hover parallax accessory_area--id_card">
+            </div>
+            <div class="desktop_main_grid--icons_area">
+                <div data-speedx="0.02" data-speedy="0.03" class="clickable float_hover parallax app_group app_group--academics">
+                    <img src="./assets/images/toaster.svg" alt="" class="app_group--icons">
+                    <p class="icon_name">Academics</p>
+                </div>
+                <div data-speedx="0.01" data-speedy="0.03" class="clickable rotate_hover parallax app_group app_group--experience">
+                    <img src="./assets/images/coffee.svg" alt="" class="app_group--icons">
+                    <p class="icon_name">Experience</p>
+                </div>
+                <div data-speedx="0.03" data-speedy="0.03" class="clickable size_hover parallax app_group app_group--projects">
+                    <img src="./assets/images/straw cookies.svg" alt="" class="app_group--icons_straw_cookies">
+                    <p class="icon_name">Projects</p>
+                </div>
+                <div data-speedx="0.04" data-speedy="0.03" class="clickable float_hover parallax app_group app_group--skills">
+                    <img src="./assets/images/clover_sticker.svg" alt="" class="app_group--icons">
+                    <p class="icon_name">Skills</p>
+                </div>
+                <div data-speedx="0.04" data-speedy="0.03" class="clickable rotate_hover parallax app_group app_group--contact">
+                    <img src="./assets/images/turtle cookie.svg" alt="" class="app_group--icons">
+                    <p class="icon_name">Contact</p>
+                </div>
+                <div data-speedx="0.01" data-speedy="0.03" class="clickable size_hover parallax app_group app_group--achievements">
+                    <img src="./assets/images/capy and puppy.svg" alt="" class="app_group--icons">
+                    <p class="icon_name">Achievements</p>
                 </div>
             </div>
         </div>
@@ -66,7 +99,7 @@
 
 <script setup>
     import { onMounted } from 'vue';
-    import { gsap, ScrollTrigger } from './js/vendor.js';
+    import { useParallax, floatHover, rotateHover, sizeHover } from './composables/animations';
 
     const props = defineProps({
         viewport: Object,
@@ -74,6 +107,16 @@
     });
 
     onMounted(() => {
-        
+        const parallaxEl = document.querySelectorAll(".parallax");
+        useParallax(parallaxEl);
+
+        const floatHoverEl = document.querySelectorAll(".float_hover");
+        floatHover(floatHoverEl);
+
+        const rotateHoverEl = document.querySelectorAll(".rotate_hover");
+        rotateHover(rotateHoverEl);
+
+        const sizeHoverEl = document.querySelectorAll(".size_hover");
+        sizeHover(sizeHoverEl);
     });
 </script>

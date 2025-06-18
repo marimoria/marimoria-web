@@ -83,10 +83,6 @@
         z-index: 2;
     }
 
-    &--passport:hover {
-        cursor: pointer;
-    }
-
     &--logo {
         position: absolute;
         top: 18%;
@@ -189,7 +185,7 @@
     }    
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     .trinket_top, .trinket_bottom {
         height: 22%;
     }
