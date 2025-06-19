@@ -214,6 +214,7 @@
 
         .github, .gmail, .instagram {
             width: 100%;
+            height: auto;
         }
 
         .github:hover {
@@ -236,6 +237,25 @@
 .projects_popup {
     &--close_button {
         top: 0;
+    }
+
+    &--link_button {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        
+        top: 95%;
+        left: 90%;
+
+        &--button_image {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &--link_button:hover {
+        scale: 1.1;
+        transition: transform 0.2 ease;
     }
 }
 
@@ -385,6 +405,15 @@
 
     .academics_popup {
         width: 55em;
+    }
+
+    .projects_popup {
+        &--link_button {
+            width: 50px;
+            height: 50px;
+            top: 95%;
+            left: 90%;
+        }
     }
 
     .time {
