@@ -2,9 +2,9 @@
     position: relative;
     width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.5);
     background-image: url("./assets/images/dotted_paper_bg.svg");
-    background-size: cover;
+    background-size: contain;
     background-blend-mode: lighten;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -81,10 +81,6 @@
         border-radius: 15px;
         filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.3));
         z-index: 2;
-    }
-
-    &--passport:hover {
-        cursor: pointer;
     }
 
     &--logo {
@@ -189,7 +185,7 @@
     }    
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1024px) {
     .trinket_top, .trinket_bottom {
         height: 22%;
     }

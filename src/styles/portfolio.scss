@@ -1,0 +1,515 @@
+.background {
+    position: relative;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    background-color: rgba(255,255,255,0.5);
+    background-image: url("./assets/images/dotted_paper_bg.svg");
+    background-size: contain;
+    background-blend-mode: lighten;
+    overflow-x: hidden;
+}
+
+.main_grid {
+    $self: &;
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    &--header_area {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &--icons_area {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.app_group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon_name {
+    font-family: "Satoshi";
+    font-size: 13px;
+    font-weight: bold;
+    color: #ab8568;
+    text-align: center;
+    margin: 3px;
+}
+
+.time {
+    font-family: "Satoshi";
+    font-size: 55px;
+    font-weight: 900;
+    color: #a3b87f;
+    margin-bottom: -10px;
+}
+
+.reminder {
+    font-family: "Satoshi";
+    font-size: 15px;
+    font-weight: bold;
+    color: #a3b87f;
+    margin-bottom: 10px;
+}
+
+.icon_group_A {
+    $self: &;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    &--dvd_widget {
+        width: 70%;
+    }
+
+    &--icon_grid {
+        $self: &;
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        align-items: center;
+        justify-items: center;
+
+        &--toaster, &--straw_cookies {
+            width: 100%;
+        }
+    }
+}
+
+.icon_group_B {
+    $self: &;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+    &--digicam_widget {
+        width: 60%;
+        align-self: center;
+    }
+
+    &--coffee {
+        width: 65%;
+    }
+}
+
+.icon_group_C {
+    $self: &;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    &--lillypad_widget {
+        width: 45%;
+    }
+
+    &--ball_widget {
+        width: 40%;
+    }
+
+    &--icon_grid {
+        width: 50%;
+        $self: &;
+
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        align-items: center;
+        justify-items: center;
+
+        &--clover_sticker, &--turtle_cookie {
+            width: 70%;
+        }
+    }
+}
+
+.academics_popup, .experience_popup, .achievements_popup, .contacts_popup, .projects_popup {
+    position: absolute;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: clamp(33em, 12vw + 30em, 50em);
+
+    &--popup_image {
+        width: 100%;
+        display: block;
+    }
+
+    &--close_button {
+        position: absolute;
+        top: -5%;
+        left: 95%;
+        width: 30px;
+        height: 30px;
+        z-index: 150;
+    }
+
+    &--close_button:hover {
+        transform: scale(1.2);
+        transition: transform 0.2s ease;
+    }
+}
+
+.skills_popup {
+    position: absolute;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    width: clamp(30em, 5vw + 30em, 40em);
+
+    &--popup_image {
+        width: 100%;
+        display: block;
+    }
+
+    &--close_button {
+        position: absolute;
+        top: 1%;
+        left: 90%;
+        width: 35px;
+        height: 35px;
+        z-index: 150;
+    }
+
+    &--close_button:hover {
+        transform: scale(1.2);
+        transition: transform 0.2s ease;
+    }
+}
+
+.contacts_popup {
+    box-shadow: none;
+
+    &--icon_wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        top: 0;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15%;
+            height: auto;
+        }
+
+        .github, .gmail, .instagram {
+            width: 100%;
+        }
+
+        .github:hover {
+            scale: 1.1;
+            transition: transform 0.2s ease;
+        }
+
+        .gmail:hover {
+            scale: 1.1;
+            transition: transform 0.2s ease;
+        }
+
+        .instagram:hover {
+            scale: 1.1;
+            transition: transform 0.2s ease;
+        }
+    }
+}
+
+.projects_popup {
+    &--close_button {
+        top: 0;
+    }
+}
+
+@media (min-height: 700px) {
+    .main_grid {
+        &--icons_area {
+            gap: 20px;
+        }
+    }
+
+    .icon_name {
+        font-size: 15px;
+    }
+
+    .icon_group_B {
+        margin-bottom: 20px;
+
+        &--digicam_widget {
+            width: 63%;
+        }
+    }
+
+    .icon_group_C {
+        &--ball_widget {
+            width: 45%;
+        }
+    }
+}
+
+@media (min-height: 800px) {
+    .main_grid {
+        &--header_area {
+            margin: 25px;
+        }
+    }
+
+    .icon_name {
+        font-size: 17px;
+    }
+}
+
+@media (min-height: 900px) {
+    .main_grid {
+        &--icons_area {
+            gap: 30px;
+        }
+    }
+
+    .icon_name {
+        font-size: 17px;
+    }
+
+    .icon_group_B {
+        margin-bottom: 35px;
+    }
+}
+
+@media (min-width: 700px) {
+    .icon_name {
+        font-size: 18px;
+    }
+
+    .time {
+        font-size: 80px;
+    }
+
+    .reminder {
+        font-size: 23px;
+    }
+
+    .main_grid {
+        &--header_area {
+            margin: 0px;
+        }
+
+        &--icons_area {
+            gap: 0px;
+        }
+    }
+
+    .icon_group_A {
+        &--dvd_widget {
+            width: 45%;
+        }
+
+        &--icon_grid {
+            width: 30%;
+
+            &--toaster, &--straw_cookies {
+                width: 100%;
+            }
+        }
+    }
+
+    .icon_group_B {
+        gap: 15vw;
+
+        &--digicam_widget {
+            width: 50%;
+        }
+
+        &--coffee {
+            width: 95%;
+        }
+    }
+
+    .icon_group_C {
+        gap: 15vw;
+
+        &--ball_widget {
+            width: 35%;
+        }
+
+        &--icon_grid {
+            width: 30%;
+
+            &--clover_sticker, &--turtle_cookie {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (min-height: 1000px) {
+    .main_grid {
+        &--icons_area {
+            gap: 10px;
+        }
+    }
+}
+
+@media (min-width: 1025px), (min-width: 1024px) and (max-height: 700px) {
+    .desktop_main_grid {
+        $self: &;
+
+        display: grid;
+        grid-template-columns: 70% 30%;
+        width: 100vw;
+        height: calc(var(--vh, 1vh) * 100);
+
+        &--accessory_area, &--icons_area {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .academics_popup {
+        width: 55em;
+    }
+
+    .time {
+        position: absolute;
+        font-size: 80px;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 3vh
+    }
+
+    .reminder {
+        position: absolute;
+        font-size: 20px;
+        text-align: center;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 13vh;
+    }
+
+    .accessory_area {
+        $self: &;
+
+        &--digicam_widget {
+            position: absolute;
+            width: 30%;
+            left: 5vw;
+            top: 15vh;
+            rotate: -5deg;
+        }
+
+        &--book_widget {
+            position: absolute;
+            width: 25%;
+            top: 30vh;
+            left: 33vw;
+            rotate: 5deg;
+        }
+
+        &--dvd_widget {
+            position: absolute;
+            width: 20%;
+            top: 43vh;
+            left: 20vw;
+        }
+
+        &--ball_widget {
+            position: absolute;
+            width: 20%;
+            left: 5vw;
+            top: 68vh;
+        }
+
+        &--id_card {
+            position: absolute;
+            width: 25%;
+            top: 63vh;
+            left: 25vw;
+            rotate: -10deg;
+        }
+    }
+
+    .app_group {
+        $self: &;
+
+        &--icons {
+            width: 100;
+        }
+
+        &--icons_straw_cookies {
+            width: 90%;
+        }
+
+        &--academics {
+            position: absolute;
+            top: 15vh;
+        }
+
+        &--experience {
+            position: absolute;
+            top: 5vh;
+            left: 15vw;
+        }
+
+        &--projects {
+            position: absolute;
+            top: 30vh;
+            left: 10vw;
+        }
+
+        &--skills {
+            position: absolute;
+            top: 52vh;
+        }
+
+        &--contact {
+            position: absolute;
+            top: 65vh;
+            left: 15vw;
+        }
+
+        &--achievements {
+            position: absolute;
+            top: 75vh;
+            left: 3vw;
+        }
+    }
+}
+
+@media (min-width: 1024px) and (max-height: 700px) {
+    .reminder {
+        top: 18vh;
+    }
+
+    .app_group {
+        &--icons {
+            width: 70%;
+        }
+
+        &--icons_straw_cookies {
+            width: 60%;
+        }
+
+        &--contact {
+            top: 60vh;
+        }
+    }
+}

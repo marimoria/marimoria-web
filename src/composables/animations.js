@@ -172,17 +172,10 @@ export function sizeHover(elements) {
     });
 }
 
-export function freeDrag(elements, bounds) {
-    elements.forEach((el) => {
-        Draggable.create(el, {
-            bounds: bounds,
-            inertia: true,
-            onDrag() {
-                draggingElements.add(el);
-            },
-            onDragEnd() {
-                draggingElements.delete(el);
-            }
-        })
-    })
+export function freeDrag(element, bounds) {
+    Draggable.create(element, {
+        bounds: bounds,
+        inertia: true,
+        cursor: "none"
+    });
 }

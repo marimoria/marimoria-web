@@ -4,19 +4,14 @@
     box-sizing: border-box;
 }
 
-.noselect {
-    -webkit-user-select: none; /* Safari */
-    user-select: none;
-    -webkit-touch-callout: none; /* Disable iOS popup */
-}
-
 html {
     font-size: 62.5%
     // Makes it so that 0.1 rem = 1 px
 }
 
 a {
-    all: unset;
+    text-decoration: none;
+    color: inherit;
 }
 
 body {
@@ -25,7 +20,34 @@ body {
     margin: 0;
 }
 
+.draggable, body {
+    cursor: url('@/assets/images/regular_cursor.png') 0 0, auto;
+}
+
+a, button, .clickable {
+    cursor: url('@/assets/images/pointer_cursor.png') 0 0, pointer;
+}
+
 @font-face {
-    font-family: "FOT Bokutoh";
-    src: url("../assets/fonts/FOT-RodinBokutoh.otf");
+    font-family: "Satoshi";
+    src: url("@/assets/fonts/Satoshi-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+    transition: all 0.5s ease;
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+    opacity: 0;
+    transform: translateY(20px); // slide upward
+}
+
+.fade-slide-enter-to,
+.fade-slide-leave-from {
+    opacity: 1;
+    transform: translateY(0);
 }
