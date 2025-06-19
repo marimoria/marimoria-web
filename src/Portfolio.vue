@@ -21,7 +21,7 @@
         </div>
 
         <div id="projects_popup" v-if="projectsPopVisible" class="draggable projects_popup">
-            <img id="projects_popup_img_1" @click="setProjectImage($event)" src="./assets/images/marimoria_portfolio_popup.svg" alt="" class="draggable projects_popup--popup_image">
+            <img id="projects_popup_img_1" @touchend="setProjectImage($event)" @click="setProjectImage($event)" src="./assets/images/marimoria_portfolio_popup.svg" alt="" class="draggable projects_popup--popup_image">
             <img id="projects_popup_close_button" @touchend="projectsPopVisible = false" @click="projectsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable projects_popup--close_button">
         </div>
 
@@ -38,7 +38,7 @@
                     <img src="./assets/images/instagram.svg" alt="" class="clickable instagram">
                 </a>
             </div>
-            <img id="contacts_popup_close_button" @click="contactPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable contacts_popup--close_button">
+            <img id="contacts_popup_close_button" @touchend="contactPopVisible = false" @click="contactPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable contacts_popup--close_button">
         </div>
 
         <div v-if="(viewport.w < 1024) || ((viewport.w == 1024) && (viewport.h) > 800)" class="main_grid">
@@ -148,7 +148,24 @@
     import tokinote from './assets/images/tokinote_portfolio_popup.svg';
     import marimoria from './assets/images/marimoria_portfolio_popup.svg';
 
-    const images = [marimoria, marsudia, lemibot, tokinote];
+    import academicPopup from './assets/images/academics_popup.svg';
+    import experiencePopup from './assets/images/experience_popup.svg';
+    import skillsPopup from './assets/images/skills_popup.svg';
+    import contactPopup from './assets/images/contacts_popup.svg';
+    import achievementsPopup from './assets/images/achievements_popup.svg';
+
+    const projectPopupimages = [marimoria, marsudia, lemibot, tokinote];
+    const popupImages = [academicPopup, experiencePopup, skillsPopup, contactPopup, achievementsPopup];
+
+    popupImages.forEach((popupImg) => {
+        const image = new Image();
+        image.src = popupImg;
+    });
+
+    projectPopupimages.forEach((projectPopup) => {
+        const image = new Image();
+        image.src = projectPopup;
+    });
 
     const props = defineProps({
         viewport: Object,
@@ -164,10 +181,10 @@
 
     function setProjectImage(event) {
         const element = event.currentTarget;
-        let currentIndex = parseInt(element.dataset.index || '0'); // fallback to 0 if undefined
-        const nextIndex = (currentIndex + 1) % images.length;
+        let currentIndex = parseInt(element.dataset.index || '0');
+        const nextIndex = (currentIndex + 1) % projectPopupimages.length;
 
-        element.setAttribute('src', images[nextIndex]);
+        element.setAttribute('src', projectPopupimages[nextIndex]);
         element.dataset.index = nextIndex;
     }
 
