@@ -15,6 +15,11 @@
             <img id="skills_popup_close_button"  @click="skillsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable skills_popup--close_button">
         </div>
 
+        <div id="achievements_popup" v-if="achievementsPopVisible" class="draggable achievements_popup">
+            <img src="./assets/images/achievements_popup.svg" alt="" class="draggable achievements_popup--popup_image">
+            <img id="achievements_popup_close_button" @click="achievementsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable achievements_popup--close_button">
+        </div>
+
         <div v-if="(viewport.w < 1024) || ((viewport.w == 1024) && (viewport.h) > 800)" class="main_grid">
             <div class="main_grid--header_area">
                 <p class="time">03:30</p>
@@ -43,7 +48,7 @@
 
                 <div class="icon_group_B">
                     <img data-speedx="0.04" data-speedy="0.03" src="./assets/images/digicam_widget.svg" alt="" class="float_hover parallax icon_group_B--digicam_widget">
-                    <div data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
+                    <div @click="achievementsPopVisible = true" data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
                         <img src="./assets/images/coffee.svg" alt="" class="rotate_hover icon_group_B--coffee">
                         <p class="icon_name">Achievements</p>
                     </div>
@@ -99,7 +104,7 @@
                     <img src="./assets/images/turtle cookie.svg" alt="" class="app_group--icons">
                     <p class="icon_name">Contact</p>
                 </div>
-                <div data-speedx="0.01" data-speedy="0.03" class="clickable size_hover parallax app_group app_group--achievements">
+                <div @click="achievementsPopVisible = true" data-speedx="0.01" data-speedy="0.03" class="clickable size_hover parallax app_group app_group--achievements">
                     <img src="./assets/images/capy and puppy.svg" alt="" class="app_group--icons">
                     <p class="icon_name">Achievements</p>
                 </div>
@@ -124,6 +129,7 @@
     const academicsPopVisible = ref(false);
     const experiencePopVisible = ref(false);
     const skillsPopVisible = ref(false);
+    const achievementsPopVisible = ref(false);
 
     onMounted(() => {
         const parallaxEl = document.querySelectorAll(".parallax");
@@ -138,40 +144,44 @@
         const sizeHoverEl = document.querySelectorAll(".size_hover");
         sizeHover(sizeHoverEl);
 
-        watch(academicsPopVisible, async (visible) => {
-            if (visible) {
-                await nextTick();
+        watch(
+            [academicsPopVisible, experiencePopVisible, skillsPopVisible, achievementsPopVisible],
+            async ([newAcaVal, newExpVal, newSkillVal, newAchVal], [oldAcaVal, oldExpVal, oldSkillVal, oldAchVal]) => {
+                if (newAcaVal || newExpVal || newSkillVal || newAchVal) {
+                    await nextTick();
+                }
 
-                document.querySelector('#academics_popup_close_button').addEventListener('touchend', () => {
-                    academicsPopVisible.value = false;
-                });
+                if (newAcaVal != oldAcaVal && newAcaVal) {
+                    document.querySelector('#academics_popup_close_button').addEventListener('touchend', () => {
+                        academicsPopVisible.value = false;
+                    });
 
-                freeDrag("#academics_popup", ".background");
+                    freeDrag("#academics_popup", ".background");
+                }
+
+                if (newExpVal != oldExpVal && newExpVal) {
+                    document.querySelector('#experience_popup_close_button').addEventListener('touchend', () => {
+                        experiencePopVisible.value = false;
+                    });
+
+                    freeDrag("#experience_popup", ".background");
+                }
+                if (newSkillVal != oldSkillVal && newSkillVal) {
+                    document.querySelector('#skills_popup_close_button').addEventListener('touchend', () => {
+                        skillsPopVisible.value = false;
+                    });
+
+                    freeDrag("#skills_popup", ".background");
+
+                }
+                if (newAchVal != oldAchVal && newAchVal) {
+                    document.querySelector('#achievements_popup_close_button').addEventListener('touchend', () => {
+                        achievementsPopVisible.value = false;
+                    });
+
+                    freeDrag("#achievements_popup", ".background");
+                }
             }
-        });
-
-        watch(experiencePopVisible, async (visible) => {
-            if (visible) {
-                await nextTick();
-
-                document.querySelector('#experience_popup_close_button').addEventListener('touchend', () => {
-                    experiencePopVisible.value = false;
-                });
-
-                freeDrag("#experience_popup", ".background");
-            }
-        });
-
-        watch(skillsPopVisible, async (visible) => {
-            if (visible) {
-                await nextTick();
-
-                document.querySelector('#skills_popup_close_button').addEventListener('touchend', () => {
-                    skillsPopVisible.value = false;
-                });
-
-                freeDrag("#skills_popup", ".background");
-            }
-        });
+        );
     });
 </script>
