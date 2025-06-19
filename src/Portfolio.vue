@@ -22,7 +22,7 @@
 
         <div id="projects_popup" v-if="projectsPopVisible" class="draggable projects_popup">
             <img id="projects_popup_img_1" @click="setProjectImage($event)" src="./assets/images/marimoria_portfolio_popup.svg" alt="" class="draggable projects_popup--popup_image">
-            <img id="projects_popup_close_button" @touchend="projectsPopVisible = false" @click="projectsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="projects_popup--close_button">
+            <img id="projects_popup_close_button" @touchend="projectsPopVisible = false" @click="projectsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable projects_popup--close_button">
         </div>
 
         <div id="contacts_popup" v-if="contactPopVisible" class="draggable contacts_popup">
