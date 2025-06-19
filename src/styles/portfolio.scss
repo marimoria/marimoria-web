@@ -138,7 +138,7 @@
     }
 }
 
-.academics_popup, .experience_popup, .achievements_popup, .contacts_popup {
+.academics_popup, .experience_popup, .achievements_popup, .contacts_popup, .projects_popup {
     position: absolute;
     z-index: 100;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -230,6 +230,12 @@
             scale: 1.1;
             transition: transform 0.2s ease;
         }
+    }
+}
+
+.projects_popup {
+    &--close_button {
+        top: 0;
     }
 }
 

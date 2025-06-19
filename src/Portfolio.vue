@@ -2,22 +2,27 @@
     <main class="background">
         <div id="academics_popup" v-if="academicsPopVisible" class="draggable academics_popup">
             <img src="./assets/images/academics_popup.svg" alt="" class="draggable academics_popup--popup_image">
-            <img id="academics_popup_close_button" @click="academicsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable academics_popup--close_button">
+            <img id="academics_popup_close_button" @touchend="academicsPopVisible = false" @click="academicsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable academics_popup--close_button">
         </div>
 
         <div id="experience_popup" v-if="experiencePopVisible" class="draggable experience_popup">
             <img src="./assets/images/experience_popup.svg" alt="" class="draggable experience_popup--popup_image">
-            <img id="experience_popup_close_button" @click="experiencePopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable experience_popup--close_button">
+            <img id="experience_popup_close_button" @touchend="experiencePopVisible = false" @click="experiencePopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable experience_popup--close_button">
         </div>
 
         <div id="skills_popup" v-if="skillsPopVisible" class="draggable skills_popup">
             <img src="./assets/images/skills_popup.svg" alt="" class="draggable skills_popup--popup_image">
-            <img id="skills_popup_close_button"  @click="skillsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable skills_popup--close_button">
+            <img id="skills_popup_close_button" @touchend="skillsPopVisible = false" @click="skillsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable skills_popup--close_button">
         </div>
 
         <div id="achievements_popup" v-if="achievementsPopVisible" class="draggable achievements_popup">
             <img src="./assets/images/achievements_popup.svg" alt="" class="draggable achievements_popup--popup_image">
-            <img id="achievements_popup_close_button" @click="achievementsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable achievements_popup--close_button">
+            <img id="achievements_popup_close_button" @touchend="achievementsPopVisible = false" @click="achievementsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable achievements_popup--close_button">
+        </div>
+
+        <div id="projects_popup" v-if="projectsPopVisible" class="draggable projects_popup">
+            <img id="projects_popup_img_1" @click="setProjectImage($event)" src="./assets/images/marimoria_portfolio_popup.svg" alt="" class="draggable projects_popup--popup_image">
+            <img id="projects_popup_close_button" @touchend="projectsPopVisible = false" @click="projectsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="projects_popup--close_button">
         </div>
 
         <div id="contacts_popup" v-if="contactPopVisible" class="draggable contacts_popup">
@@ -44,18 +49,18 @@
 
             <div class="main_grid--icons_area">
                 <div class="icon_group_A">
-                    <div @click="academicsPopVisible = true" data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
+                    <div @touchend="academicsPopVisible = true" @click="academicsPopVisible = true" data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
                         <img src="./assets/images/dvd.svg" alt="" class="float_hover icon_group_A--dvd_widget">
                         <p class="icon_name">Academics</p>
                     </div>
                     <div class="icon_group_A--icon_grid">
-                        <div @click="experiencePopVisible = true" data-speedx="0.03" data-speedy="0.03" class="parallax app_group">
+                        <div @touchend="experiencePopVisible = true" @click="experiencePopVisible = true" data-speedx="0.03" data-speedy="0.03" class="parallax app_group">
                             <img src="./assets/images/toaster.svg" alt="" class="rotate_hover icon_group_A--icon_grid--toaster">
                             <p class="icon_name">Experience</p>
                         </div>
                         <div class="app_group"></div>
                         <div class="app_group"></div>
-                        <div data-speedx="0.01" data-speedy="0.03" class="parallax app_group">
+                        <div @touchend="projectsPopVisible = true" @click="projectsPopVisible = true" data-speedx="0.01" data-speedy="0.03" class="parallax app_group">
                             <img src="./assets/images/straw cookies.svg" alt="" class="size_hover icon_group_A--icon_grid--straw_cookies">
                             <p class="icon_name">Projects</p>
                         </div>
@@ -64,7 +69,7 @@
 
                 <div class="icon_group_B">
                     <img data-speedx="0.04" data-speedy="0.03" src="./assets/images/digicam_widget.svg" alt="" class="float_hover parallax icon_group_B--digicam_widget">
-                    <div @click="achievementsPopVisible = true" data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
+                    <div @touchend="achievementsPopVisible = true" @click="achievementsPopVisible = true" data-speedx="0.02" data-speedy="0.03" class="parallax app_group">
                         <img src="./assets/images/coffee.svg" alt="" class="rotate_hover icon_group_B--coffee">
                         <p class="icon_name">Achievements</p>
                     </div>
@@ -73,11 +78,11 @@
                 <div class="icon_group_C">
                     <div class="icon_group_C--icon_grid">
                         <div class="app_group"></div>
-                        <div @click="skillsPopVisible = true" data-speedx="0.01" data-speedy="0.03" class="parallax app_group">
+                        <div @touchend="skillsPopVisible = true" @click="skillsPopVisible = true" data-speedx="0.01" data-speedy="0.03" class="parallax app_group">
                             <img src="./assets/images/clover_sticker.svg" alt="" class="size_hover icon_group_C--icon_grid--clover_sticker">
                             <p class="icon_name">Skills</p>
                         </div>
-                        <div @click="contactPopVisible = true" data-speedx="0.03" data-speedy="0.03" class="parallax app_group">
+                        <div @touchend = "contactPopVisible = true" @click="contactPopVisible = true" data-speedx="0.03" data-speedy="0.03" class="parallax app_group">
                             <img src="./assets/images/turtle cookie.svg" alt="" class="float_hover icon_group_C--icon_grid--turtle_cookie">
                             <p class="icon_name">Contact</p>
                         </div>
@@ -108,7 +113,7 @@
                     <img src="./assets/images/coffee.svg" alt="" class="app_group--icons">
                     <p class="icon_name">Experience</p>
                 </div>
-                <div data-speedx="0.03" data-speedy="0.03" class="clickable size_hover parallax app_group app_group--projects">
+                <div @click="projectsPopVisible = true" data-speedx="0.03" data-speedy="0.03" class="clickable size_hover parallax app_group app_group--projects">
                     <img src="./assets/images/straw cookies.svg" alt="" class="app_group--icons_straw_cookies">
                     <p class="icon_name">Projects</p>
                 </div>
@@ -137,6 +142,14 @@
     import { onMounted, ref, watch, nextTick } from 'vue';
     import { useParallax, floatHover, rotateHover, sizeHover, freeDrag } from './composables/animations';
 
+    // preloading images
+    import marsudia from './assets/images/marsudia_portfolio_popup.svg';
+    import lemibot from './assets/images/lemibot_portfolio_popup.svg';
+    import tokinote from './assets/images/tokinote_portfolio_popup.svg';
+    import marimoria from './assets/images/marimoria_portfolio_popup.svg';
+
+    const images = [marimoria, marsudia, lemibot, tokinote];
+
     const props = defineProps({
         viewport: Object,
         device: Object
@@ -147,6 +160,16 @@
     const skillsPopVisible = ref(false);
     const achievementsPopVisible = ref(false);
     const contactPopVisible = ref(false);
+    const projectsPopVisible = ref(false);
+
+    function setProjectImage(event) {
+        const element = event.currentTarget;
+        let currentIndex = parseInt(element.dataset.index || '0'); // fallback to 0 if undefined
+        const nextIndex = (currentIndex + 1) % images.length;
+
+        element.setAttribute('src', images[nextIndex]);
+        element.dataset.index = nextIndex;
+    }
 
     onMounted(() => {
         const parallaxEl = document.querySelectorAll(".parallax");
@@ -162,51 +185,35 @@
         sizeHover(sizeHoverEl);
 
         watch(
-            [academicsPopVisible, experiencePopVisible, skillsPopVisible, achievementsPopVisible, contactPopVisible],
-            async ([newAcaVal, newExpVal, newSkillVal, newAchVal, newConVal], [oldAcaVal, oldExpVal, oldSkillVal, oldAchVal, oldConVal]) => {
-                if (newAcaVal || newExpVal || newSkillVal || newAchVal || newConVal) {
+            [academicsPopVisible, experiencePopVisible, skillsPopVisible, achievementsPopVisible, contactPopVisible, projectsPopVisible],
+            async ([newAcaVal, newExpVal, newSkillVal, newAchVal, newConVal, newProVal],[oldAcaVal, oldExpVal, oldSkillVal, oldAchVal, oldConVal, oldProVal]) => {
+                if (newAcaVal || newExpVal || newSkillVal || newAchVal || newConVal || newProVal) {
                     await nextTick();
                 }
 
                 if (newAcaVal != oldAcaVal && newAcaVal) {
-                    document.querySelector('#academics_popup_close_button').addEventListener('touchend', () => {
-                        academicsPopVisible.value = false;
-                    });
-
                     freeDrag("#academics_popup", ".background");
                 }
 
                 if (newExpVal != oldExpVal && newExpVal) {
-                    document.querySelector('#experience_popup_close_button').addEventListener('touchend', () => {
-                        experiencePopVisible.value = false;
-                    });
-
                     freeDrag("#experience_popup", ".background");
                 }
 
                 if (newSkillVal != oldSkillVal && newSkillVal) {
-                    document.querySelector('#skills_popup_close_button').addEventListener('touchend', () => {
-                        skillsPopVisible.value = false;
-                    });
-
                     freeDrag("#skills_popup", ".background");
 
                 }
 
                 if (newAchVal != oldAchVal && newAchVal) {
-                    document.querySelector('#achievements_popup_close_button').addEventListener('touchend', () => {
-                        achievementsPopVisible.value = false;
-                    });
-
                     freeDrag("#achievements_popup", ".background");
                 }
 
                 if (newConVal != oldConVal && newConVal) {
-                    document.querySelector("#contacts_popup_close_button").addEventListener('touchend', () => {
-                        contactPopVisible.value = false;
-                    });
+                    freeDrag("#contacts_popup", ".background");
+                }
 
-                    freeDrag("#contacts_popup", ".background")
+                if (newProVal != oldProVal && newProVal) {
+                    freeDrag("#projects_popup", ".background");
                 }
             }
         );
