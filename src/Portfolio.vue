@@ -23,6 +23,9 @@
         <div id="projects_popup" v-if="projectsPopVisible" class="draggable projects_popup">
             <img id="projects_popup_img_1" @touchend="setProjectImage($event)" @click="setProjectImage($event)" src="./assets/images/marimoria_portfolio_popup.svg" alt="" class="draggable projects_popup--popup_image">
             <img id="projects_popup_close_button" @touchend="projectsPopVisible = false" @click="projectsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable projects_popup--close_button">
+            <a @touchend="openProjectLink" :href="projectLinks[currentProjectIndex]" target="_blank" class="clickable projects_popup--link_button">
+                <img class="projects_popup--link_button--button_image" id="projects_popup_open_link_button" src="./assets/images/open_link_button.svg">
+            </a>
         </div>
 
         <div id="contacts_popup" v-if="contactPopVisible" class="draggable contacts_popup">
@@ -155,7 +158,17 @@
     import achievementsPopup from './assets/images/achievements_popup.svg';
 
     const projectPopupimages = [marimoria, marsudia, lemibot, tokinote];
+    const projectLinks = [
+        "https://github.com/marimoria/marimoria-web",
+        "https://github.com/marimoria/Marsudia",
+        "https://github.com/marimoria/lemi-bot",
+        "https://github.com/marimoria/Tokinote"
+    ];
     const popupImages = [academicPopup, experiencePopup, skillsPopup, contactPopup, achievementsPopup];
+
+    function openProjectLink() {
+        window.open(projectLinks[currentProjectIndex.value], "_blank");
+    }
 
     popupImages.forEach((popupImg) => {
         const image = new Image();
@@ -178,6 +191,7 @@
     const achievementsPopVisible = ref(false);
     const contactPopVisible = ref(false);
     const projectsPopVisible = ref(false);
+    const currentProjectIndex = ref(0);
 
     function setProjectImage(event) {
         const element = event.currentTarget;
@@ -186,6 +200,7 @@
 
         element.setAttribute('src', projectPopupimages[nextIndex]);
         element.dataset.index = nextIndex;
+        currentProjectIndex.value = nextIndex;
     }
 
     onMounted(() => {
