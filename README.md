@@ -22,17 +22,17 @@ Hosted with github pages.
 
 ## 📂 Folder Structure
 root
-|-main.js/ vue app creation
-|-index.html/ html template
-|-vite.config.mjs/ vite configuration
-|-vitest.config.mjs/ testing configuration
-|-src/
-    |-assets/ fonts & images
-    |-composables/ reusable components
-    |-js/ routers & vendors
-    |-styles/ SCSS styling
-    |-App.vue/ main layout for router-view
-    |-Landing.vue/ first landing page
+|-main.js/ vue app creation</br>
+|-index.html/ html template</br>
+|-vite.config.mjs/ vite configuration</br>
+|-vitest.config.mjs/ testing configuration</br>
+|-src/</br>
+    |-assets/ fonts & images</br>
+    |-composables/ reusable components</br>
+    |-js/ routers & vendors</br>
+    |-styles/ SCSS styling</br>
+    |-App.vue/ main layout for router-view</br>
+    |-Landing.vue/ first landing page</br>
     |-Portfolio.vue/ portfolio informations page
 
 ## ⚙️ Setup Instructions
