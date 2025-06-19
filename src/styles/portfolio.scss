@@ -138,7 +138,7 @@
     }
 }
 
-.academics_popup, .experience_popup, .achievements_popup {
+.academics_popup, .experience_popup, .achievements_popup, .contacts_popup {
     position: absolute;
     z-index: 100;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -187,6 +187,49 @@
     &--close_button:hover {
         transform: scale(1.2);
         transition: transform 0.2s ease;
+    }
+}
+
+.contacts_popup {
+    box-shadow: none;
+
+    &--icon_wrapper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        top: 0;
+
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 15%;
+            height: auto;
+        }
+
+        .github, .gmail, .instagram {
+            width: 100%;
+        }
+
+        .github:hover {
+            scale: 1.1;
+            transition: transform 0.2s ease;
+        }
+
+        .gmail:hover {
+            scale: 1.1;
+            transition: transform 0.2s ease;
+        }
+
+        .instagram:hover {
+            scale: 1.1;
+            transition: transform 0.2s ease;
+        }
     }
 }
 
