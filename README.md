@@ -21,6 +21,7 @@ Hosted with github pages.
 - Vanilla JS for animation behavior
 
 ## 📂 Folder Structure
+```yaml
 root
 |-main.js/ vue app creation</br>
 |-index.html/ html template</br>
@@ -34,6 +35,7 @@ root
     |-App.vue/ main layout for router-view</br>
     |-Landing.vue/ first landing page</br>
     |-Portfolio.vue/ portfolio informations page
+```
 
 ## ⚙️ Setup Instructions
 ```bash
