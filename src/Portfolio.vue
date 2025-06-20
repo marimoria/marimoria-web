@@ -23,7 +23,7 @@
         <div id="projects_popup" v-if="projectsPopVisible" class="draggable projects_popup">
             <img id="projects_popup_img_1" @touchend="setProjectImage($event)" @click="setProjectImage($event)" src="./assets/images/marimoria_portfolio_popup.svg" alt="" class="draggable projects_popup--popup_image">
             <img id="projects_popup_close_button" @touchend="projectsPopVisible = false" @click="projectsPopVisible = false" src="./assets/images/close_popup_button.svg" alt="" class="clickable projects_popup--close_button">
-            <a @touchend="openProjectLink" :href="projectLinks[currentProjectIndex]" target="_blank" class="clickable projects_popup--link_button">
+            <a @touchend="openLink(projectLinks[currentProjectIndex])" :href="projectLinks[currentProjectIndex]" target="_blank" class="clickable projects_popup--link_button">
                 <img class="projects_popup--link_button--button_image" id="projects_popup_open_link_button" src="./assets/images/open_link_button.svg">
             </a>
         </div>
@@ -31,13 +31,13 @@
         <div id="contacts_popup" v-if="contactPopVisible" class="draggable contacts_popup">
             <img src="./assets/images/contacts_popup.svg" alt="" class="draggable contacts_popup--popup_image">
             <div class="draggable contacts_popup--icon_wrapper">
-                <a href="https://github.com/marimoria">
+                <a @touchend="openLink('https://github.com/marimoria')" href="https://github.com/marimoria">
                     <img src="./assets/images/github.svg" alt="" class="clickable github">
                 </a>
-                <a href="mailto:mariaamandaipb262@gmail.com?Subject=Hello%20Maria!">
+                <a @touchend="openLink('mailto:mariaamandaipb262@gmail.com?Subject=Hello%20Maria!')" href="mailto:mariaamandaipb262@gmail.com?Subject=Hello%20Maria!">
                     <img src="./assets/images/gmail.svg" alt="" class="clickable gmail">
                 </a>
-                <a href="https://www.instagram.com/marimoriaa?igsh=MTY2ZndsbWQyazI1cg==">
+                <a @touchend="openLink('https://www.instagram.com/marimoriaa?igsh=MTY2ZndsbWQyazI1cg==')" href="https://www.instagram.com/marimoriaa?igsh=MTY2ZndsbWQyazI1cg==">
                     <img src="./assets/images/instagram.svg" alt="" class="clickable instagram">
                 </a>
             </div>
@@ -166,8 +166,8 @@
     ];
     const popupImages = [academicPopup, experiencePopup, skillsPopup, contactPopup, achievementsPopup];
 
-    function openProjectLink() {
-        window.open(projectLinks[currentProjectIndex.value], "_blank");
+    function openLink(url) {
+        window.open(url, "_blank");
     }
 
     popupImages.forEach((popupImg) => {
